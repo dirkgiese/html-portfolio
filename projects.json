@@ -1,0 +1,39 @@
+{
+    "array": [
+      1,
+      2,
+      3
+    ],
+    "boolean": true,
+    "color": "gold",
+    "null": null,
+    "number": 123,
+    "object": {
+      "a": "b",
+      "c": "d"
+    },
+    "string": "Hallo Welt kann ich auch",
+    "projects": [
+        {
+            "name": "Project 1",
+            "description": "Description of Project 1",
+            "url": "https://example.com/project1",
+            "img": "project1.png",
+            "stars": 5
+        },
+        {
+            "name": "Project 2",
+            "description": "Description of Project 2",
+            "url": "https://example.com/project2",
+            "img": "project2.png",
+            "stars": 3
+        },
+        {
+            "name": "Project 3",
+            "description": "Description of Project 3",
+            "url": "https://example.com/project3",
+            "img": "project3.png",
+            "stars": 2
+        }
+    ]
+  }
