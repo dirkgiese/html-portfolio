@@ -1,39 +1,47 @@
 {
-    "array": [
-      1,
-      2,
-      3
-    ],
-    "boolean": true,
-    "color": "gold",
-    "null": null,
-    "number": 123,
-    "object": {
-      "a": "b",
-      "c": "d"
-    },
-    "string": "Hallo Welt kann ich auch",
     "projects": [
         {
-            "name": "Project 1",
-            "description": "Description of Project 1",
-            "url": "https://example.com/project1",
-            "img": "project1.png",
-            "stars": 5
-        },
-        {
-            "name": "Project 2",
-            "description": "Description of Project 2",
-            "url": "https://example.com/project2",
-            "img": "project2.png",
+            "name": "Hotel Wellnessgarten",
+            "projektart": "Basic",
+            "url": "https://www.wellness-hotel-tennis.de/",
+            "online": "15.01.2024",
+            "img": "p1.png",
             "stars": 3
-        },
-        {
-            "name": "Project 3",
-            "description": "Description of Project 3",
-            "url": "https://example.com/project3",
-            "img": "project3.png",
-            "stars": 2
+        },{
+            "name": "Landhaus Hotel Sommerau",
+            "projektart": "Basic",
+            "url": "https://www.landhaus-sommerau.de/",
+            "online": "27.01.2025",
+            "img": "p1.png",
+            "stars": 3
+        },{
+            "name": "Hotel Restaurant Adler Oberstaufen",
+            "projektart": "Komfort",
+            "url": "https://adler-oberstaufen.de/",
+            "online": "27.01.2025",
+            "img": "p1.png",
+            "stars": 3
+        },{
+            "name": "Eibsee Hotel",
+            "projektart": "Komfort",
+            "url": "https://www.hotel-eibsee.de",
+            "online": "08.01.2024",
+            "img": "p1.png",
+            "stars": 3
+        },{
+            "name": "Leinsweiler Hof",
+            "projektart": "Komfort",
+            "url": "https://www.leinsweilerhof.de",
+            "online": "27.01.2025",
+            "img": "p1.png",
+            "stars": 3
+        },{
+            "name": "",
+            "projektart": "",
+            "url": "",
+            "online": "",
+            "img": "p1.png",
+            "stars": 3
         }
     ]
   }
