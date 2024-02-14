@@ -1,0 +1,125 @@
+:root {
+  --background: black;
+  --foreground: #ececec;
+  --font-family: 'Roboto', sans-serif;
+  --font-family-serif: 'Roboto', sans-serif;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --font-family-serif: 'Playfair Display', serif;
+  --white: white;
+  --black: black;
+  --grey: #222;
+  --black-01: #383838;
+  --black-02: #1b1b1b;
+  --white-01: #fff;
+  --white-02: #fafafa;
+  --white-04: gray;
+  --white-03: #f7f7f2;
+  --blue-01: #1940ff;
+  --blue-02: #173ae5;
+  --blue-04: #4d93f5;
+  --blue-03: #2c3b54;
+  --pastel-01: #f7edee;
+  --pastel-02: #dadee6;
+  --pastel-03: #e6d3d5;
+  --pastel-04: #efedd3;
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+.serif {
+  font-family: var(--font-family-serif);
+}
+@keyframes spin-in {
+  0% {
+    transform: rotateY(-90deg);
+    fill-opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove focus outline */
+  /* <option> colors */
+}
+select:focus {
+  outline: none;
+}
+select option {
+  color: inherit;
+  background-color: var(--option-bg);
+}
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+.toggle-switch {
+  display: inline-block;
+  background: var(--black-02);
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before,
+.toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: var(--black-01);
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 30px;
+}
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+.gradient-text {
+  background-color: white;
+  background-image: linear-gradient(45deg, var(--white-01), var(--white-04));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+/*# sourceMappingURL=config.css.map */

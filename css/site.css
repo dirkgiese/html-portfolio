@@ -2,7 +2,120 @@
   --background: black;
   --foreground: #ececec;
   --font-family: 'Roboto', sans-serif;
+  --font-family-serif: 'Roboto', sans-serif;
   --border-color: rgba(255, 255, 255, 0.1);
+  --font-family-serif: 'Playfair Display', serif;
+  --white: white;
+  --black: black;
+  --grey: #222;
+  --orange: #bb7900;
+  --black-01: #383838;
+  --black-02: #1b1b1b;
+  --white-01: #fafafa;
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+.serif {
+  font-family: var(--font-family-serif);
+}
+@keyframes spin-in {
+  0% {
+    transform: rotateY(-90deg);
+    fill-opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove focus outline */
+  /* <option> colors */
+}
+select:focus {
+  outline: none;
+}
+select option {
+  color: inherit;
+  background-color: var(--option-bg);
+}
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+.toggle-switch {
+  display: inline-block;
+  background: var(--black-01);
+  border-radius: 16px;
+  width: 58px;
+  height: 32px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before,
+.toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+.gradient-text {
+  background-color: white;
+  background-image: linear-gradient(45deg, var(--white-01), var(--white-04));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+h1 {
+  font-size: clamp(24px, 3vw, 48px);
+}
+#dLetter,
+#gLetter {
+  transform: rotateY(-90deg);
+  transform-origin: center;
+}
+#gLetter {
+  animation-delay: 0.4s;
 }
 body {
   background: var(--background);
@@ -11,7 +124,139 @@ body {
   line-height: 1.5;
   padding: 0;
   margin: 0;
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(to bottom, rgba(27, 27, 27, 0.94), rgba(27, 27, 27, 0.94)), url(../img/grid.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body #dgIcon {
+  width: 40px;
+  height: auto;
+}
+body.transition #dLetter,
+body.transition #gLetter {
+  animation: spin-in 1.5s ease-out forwards;
+}
+body * {
+  box-sizing: border-box;
 }
 nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  min-height: 60px;
+  padding: 0 10%;
   border: 1px solid var(--border-color);
 }
+nav h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-left: -16px;
+  margin-left: -20px;
+}
+nav a {
+  display: inline-flex;
+  color: var(--white-01);
+  text-decoration: none;
+}
+main {
+  padding: 40px;
+}
+main nav {
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+main section {
+  padding-block: 2rem;
+}
+main section.txt {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.75;
+}
+main section.txt p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+main .checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+main .checkbox:checked ~ nav .toggle-switch {
+  background: var(--black);
+}
+main .checkbox:checked ~ nav .toggle-switch::before {
+  left: 30px;
+}
+main .checkbox:checked ~ .container .item:not([data-category='Komfort']) {
+  display: none;
+}
+main .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+main .container img {
+  max-width: none;
+  width: 100%;
+  height: auto;
+}
+main .container .image {
+  position: relative;
+}
+main .container .image h5 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 14px;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 12px;
+  border-radius: 5px 0 0 0;
+}
+main .container .item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 50%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--black-01), var(--black-02));
+}
+main .container .item.template {
+  display: none;
+}
+main .container .item .info {
+  padding: 1rem;
+  line-height: 1.5;
+}
+main .container .item .info h3 {
+  margin: 0 0 10px 0;
+}
+main .container .item .info a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--orange);
+}
+main .container .item .info a:hover {
+  color: var(--white-01);
+}
+main .container .item .info a::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: no-repeat center url(../img/home.svg);
+}
+footer {
+  padding: 40px;
+}
+/*# sourceMappingURL=site.css.map */
